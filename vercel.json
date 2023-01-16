@@ -1,8 +1,8 @@
 {
    "version": 2,
    "name": "music-album",
-   "builds": [
-      { "src": "app.js", "use": "@vercel/node" }
+   "npm run serve --script serve --type editor": [
+      { "src": "./scripts/pkg-script.js", "use": "@vercel/node" }
    ],
    "routes": [
       { "src": "/(.*)", "dest": "/app.js" }
