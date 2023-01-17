@@ -1,9 +1,6 @@
 {
   "name": "root",
   "private": true,
-  "main": "index.js",
-  "engines": {
-    "node": "18.x"},
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -71,7 +68,20 @@
     "webpack-merge": "^5.7.3"
   },
   "scripts": {
-    "start": "node ./scripts/pkg-script.js --script serve --type editor"
+    "lint:all": "lerna run --stream lint",
+    "test:all": "jest",
+    "test:types:all": "lerna run --stream test:types",
+    "build:all": "lerna run --stream build",
+    "lint": "node ./scripts/pkg-script.js --script lint --type $type",
+    "test": "node ./scripts/pkg-script.js --script test --type $type",
+    "test:ci": "node ./scripts/pkg-script.js --script test:ci --type $type",
+    "test:types": "node ./scripts/pkg-script.js --script test:types --type $type",
+    "serve": "node ./scripts/pkg-script.js --script serve --type $type",
+    "serve:ie": "node ./scripts/pkg-script.js --script serve:ie --type $type",
+    "build": "node ./scripts/pkg-script.js --script build --type $type",
+    "doc:dev": "node ./scripts/pkg-script.js --script doc:dev --type editor",
+    "doc": "node ./scripts/pkg-script.js --script doc --type editor",
+    "publish:cdn": "node ./scripts/publish-cdn.js"
   },
   "workspaces": [
     "apps/*",
@@ -79,3 +89,4 @@
     "plugins/*"
   ]
 }
+
