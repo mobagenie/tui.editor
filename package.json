@@ -1,6 +1,9 @@
 {
   "name": "root",
   "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "18.x"},
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -81,7 +84,8 @@
     "build": "node ./scripts/pkg-script.js --script build --type $type",
     "doc:dev": "node ./scripts/pkg-script.js --script doc:dev --type editor",
     "doc": "node ./scripts/pkg-script.js --script doc --type editor",
-    "publish:cdn": "node ./scripts/publish-cdn.js"
+    "publish:cdn": "node ./scripts/publish-cdn.js",
+    "start": "node ./scripts/pkg-script.js --script serve --type editor"
   },
   "workspaces": [
     "apps/*",
